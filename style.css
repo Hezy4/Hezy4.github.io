@@ -1,0 +1,107 @@
+/* Import a cyberpunk-inspired font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling with dark background and neon accents */
+body {
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+}
+
+/* Dashboard grid layout inspired by Metro design */
+#dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+/* Widget (tile) styling for a Windows 8 Metro feel */
+.widget {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.widget:hover {
+  transform: scale(1.03);
+}
+
+/* Widget title with neon accent */
+.widget h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #ff00ff; /* Neon pink */
+}
+
+/* Widget content style and fade-in animation */
+.widget > div {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade-in keyframes: content slides up and fades in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling for paragraphs, list items, and links */
+.widget p, .widget li {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.widget ul {
+  list-style: none;
+}
+
+.widget a {
+  color: #00ffff; /* Neon cyan */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.widget a:hover {
+  color: #ff00ff; /* Neon pink on hover */
+}
+
+/* Optional: Metro tile layout adjustments for larger screens */
+@media (min-width: 768px) {
+  #dashboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Additional animation class for switching content (if you update the data dynamically) */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
